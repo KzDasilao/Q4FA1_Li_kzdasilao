@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-Up Form</title>
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form id="signupform" onsubmit="return information()">
+        <fieldset>
+            <legend>SIGN-UP FORM</legend>
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required onblur="blurT(this)" onfocus="focusT(this)"><br>
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username" required onblur="blurT(this)" onfocus="focusT(this)"><br>
+            <img src="images/wow.webp" alt="wow">
+            <img src="images/hi.png" alt="wow">
+            <img src="images/honkai.webp" alt="wow">
+            <img src="images/lol.png" alt="wow">
+            
+            <br>
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" required onblur="blurT(this)" onfocus="focusT(this)"><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required onblur="blurT(this)" onfocus="focusT(this)"><br>
+            <label for="address">Address:</label><br>
+            <textarea id="address" name="address" rows="4" required onblur="blurT(this)" onfocus="focusT(this)"></textarea><br>
+            <label for="gender">Gender:</label><br>
+            <select name="gender" id="gender" required onblur="blurT(this)" onfocus="focusT(this)">
+                <option value="">Select</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Prefer not to Mention</option>
+            </select><br> 
+            <label for="interests">About You:</label><br>
+            <textarea name="interests" id="aboutuser" rows="4" cols="30"></textarea><br>
+            <button type="submit">Submit</button>
+            <input type="reset" value="Clear" onclick="reset()">
+        </fieldset>
+    </form>
+    <div id="output"></div>
+
+    <script>
+        var br = "</br>";
+
+        function information() {
+            var name = document.getElementById("name").value;
+            var usernm = document.getElementById("username").value;
+            var passw = document.getElementById("password").value;
+            var email = document.getElementById("email").value;
+            var address = document.getElementById("address").value;
+            var gender = document.getElementById("gender").value;
+            var about = document.getElementById("aboutuser").value;
+
+            document.getElementById("output").innerHTML =
+                "Name: " + name + br + "Username: " + usernm + br + "Password: " + passw + br +
+                "Email: " + email + br + "Address: " + address + br + "Gender: " + gender + br +
+                "About you: " + about + br;
+
+            return false;
+        }
+
+        function blurT(element) {
+            if (element.value.trim() === '') {
+                element.style.borderColor = "red";
+            } else {
+                element.style.borderColor = "green";
+            }
+        }
+
+        function focusT(element) {
+            element.style.borderColor = "green";
+        }
+
+        function reset() {
+            document.getElementById("output").innerHTML = '';
+
+            var inputE = document.getElementsByTagName("input");
+            var textarea = document.getElementsByTagName("textarea");
+
+            for (var i = 0; i < inputE.length; i++) {
+                inputE[i].removeAttribute('style');
+            }
+
+            for (var i = 0; i < textarea.length; i++) {
+                textarea[i].removeAttribute('style');
+            }
+
+            return false; 
+        }
+    </script>
+</body>
+</html>

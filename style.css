@@ -1,0 +1,38 @@
+body{
+    background-image: url(images/magic.jpg);
+    background-size: cover;
+}
+fieldset{
+    color: aliceblue;
+    font-weight: bold;
+    border-color: rgb(236, 147, 147);
+}
+button{
+    background-color: rgb(236, 147, 147);
+    color: white;
+    border-radius: 5px;
+    border-color: white;
+    font-weight: bold;
+}
+input{
+  background-color: rgb(220, 164, 253);
+  border-color:rgb(146, 237, 255);
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+}
+textarea{
+    background-color: rgb(136, 188, 255);
+    border-color: rgb(236, 147, 147);
+    color: white;
+}
+#output{
+    color: white;
+    font-weight: bold;
+}
+img {
+    width: 200px;
+    float: right;
+    margin-right: 200px;
+
+}
